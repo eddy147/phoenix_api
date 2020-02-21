@@ -1,0 +1,24 @@
+version: "3.6"
+services:
+  web:
+    image: "eddy147/elixir:latest"
+    volumes:
+      - ./:/home/$USER/$APP
+    links:
+      - database
+    ports:
+      - "4000:4000"
+    command: './run.sh'
+    env_file: 
+        ./web.env
+    working_dir: /home/$USER/$APP
+  database:
+      image: "postgres"
+      ports: 
+          - "5432:5432" 
+      env_file:
+          - ./database.env 
+      volumes:
+          - database_data:/var/lib/postgresql/data/
+volumes:
+  database_data:
