@@ -14,6 +14,8 @@ cd /home/$$USER
 echo Y | mix phx.new --no-html --no-webpack /home/$USER/$APP --app $APP
 cd /home/$USER/$APP
 
+echo "PWD = "$PWD
+
 chown -R $USER:$USER /home/$USER/$APP
 
 mix deps.get

@@ -8,13 +8,4 @@ defmodule PhoenixApiWeb.Router do
   scope "/api", PhoenixApiWeb do
     pipe_through :api
   end
-
-  pipeline :browser do
-    plug(:accepts, ["html"])
-  end
-
-  scope "/", PhoenixApiWeb do
-    pipe_through :browser
-    get "/", DefaultController, :index
-  end
 end
