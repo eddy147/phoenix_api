@@ -9,9 +9,9 @@ echo $USER
 echo $APP
 
 useradd -m -u $USERID $USER
-cd /home/$$USER
+cd /home/$USER
 
-echo Y | mix phx.new --no-html --no-webpack /home/$USER/$APP --app $APP
+echo Y | mix phx.new --no-html --no-webpack /home/$USER/$APP
 cd /home/$USER/$APP
 
 echo "PWD = "$PWD

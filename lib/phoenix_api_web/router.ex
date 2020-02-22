@@ -7,6 +7,7 @@ defmodule PhoenixApiWeb.Router do
 
   scope "/api", PhoenixApiWeb do
     pipe_through :api
+    resources "/businesses", BusinessController, except: [:new, :edit]
   end
 
   pipeline :browser do
